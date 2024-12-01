@@ -1,4 +1,4 @@
-export const errorCatch = (error: any): string => {
+export const errorCatch = (error): string => {
 	const message = error?.response?.data?.message
 
 	return message

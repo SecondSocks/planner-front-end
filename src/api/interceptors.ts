@@ -5,7 +5,7 @@ import {
 	getAccessToken,
 	removeFromStorage
 } from '@/services/auth-token.service'
-import { AuthService } from '@/services/auth.service'
+import { authService } from '@/services/auth.service'
 
 const options: CreateAxiosDefaults = {
 	baseURL: 'http://localhost:4200/api',
@@ -43,7 +43,7 @@ axiosWithAuth.interceptors.response.use(
 			originalRequest._isRetry = true
 
 			try {
-				await AuthService.getNewToken()
+				await authService.getNewToken()
 				return axiosWithAuth.request(originalRequest)
 			} catch (error) {
 				if (errorCatch(error) === 'jwt expired') removeFromStorage()

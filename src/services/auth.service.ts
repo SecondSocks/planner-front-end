@@ -9,7 +9,7 @@ export enum EnumTokens {
 	'REFRESH_TOKEN' = 'refreshToken'
 }
 
-export class AuthService {
+class AuthService {
 	async main(type: 'login' | 'register', data: IAuthForm) {
 		const response = await axiosClassic.post<IAuthResponse>(
 			`/auth/${type}`,
@@ -39,3 +39,5 @@ export class AuthService {
 		return response
 	}
 }
+
+export const authService = new AuthService()

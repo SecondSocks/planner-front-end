@@ -13,6 +13,8 @@ export interface IUser {
 	intervalCount?: number
 }
 
+export type TypeUserForm = Omit<IUser, 'id'> & { password?: string }
+
 export interface IAuthResponse {
 	accessToken: string
 	user: IUser
