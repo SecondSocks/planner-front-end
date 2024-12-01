@@ -15,7 +15,7 @@ class UserService {
 
 	async getProfile() {
 		const response = await axiosWithAuth.get<IProfileResponse>(this.ROOT_URL)
-		return response
+		return response.data
 	}
 
 	async update(data: TypeUserForm) {
