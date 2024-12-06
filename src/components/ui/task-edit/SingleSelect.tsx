@@ -17,7 +17,7 @@ interface ISingleSelect {
 	isColorSelect?: boolean
 }
 
-export function SigleSelect({
+export function SingleSelect({
 	data,
 	onChange,
 	value,

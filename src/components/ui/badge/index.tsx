@@ -1,4 +1,5 @@
 import { CSSProperties, PropsWithChildren } from 'react'
+import { tv } from 'tailwind-variants'
 
 interface IBadge {
 	className?: string

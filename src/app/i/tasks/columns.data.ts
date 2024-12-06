@@ -1,18 +1,21 @@
 import dayjs, { type Dayjs } from 'dayjs'
 import 'dayjs/locale/ru'
+// подключение локали, если она вам нужна
 import isoWeek from 'dayjs/plugin/isoWeek'
+// ISO неделя
 import weekOfYear from 'dayjs/plugin/weekOfYear'
+
+// плагин для работы с неделями
 
 dayjs.extend(weekOfYear)
 dayjs.extend(isoWeek)
 
 export const FILTERS: Record<string, Dayjs> = {
-	// Record <key, value>
-	today: dayjs().startOf('day'), // С сегодня до завтра
-	tomorrow: dayjs().add(1, 'day').startOf('day'), // С завтра до послезавтра
-	'on-this-week': dayjs().endOf('isoWeek'), // С послезавтра до начала следующей недели
-	'on-next-week': dayjs().add(1, 'week').startOf('day'), // С начала следующей недели до начала после следующей недели
-	later: dayjs().add(2, 'week').startOf('day') // Все остальное
+	today: dayjs().startOf('day'),
+	tomorrow: dayjs().add(1, 'day').startOf('day'),
+	'on-this-week': dayjs().endOf('isoWeek'),
+	'on-next-week': dayjs().add(1, 'week').startOf('day'),
+	later: dayjs().add(2, 'week').startOf('day')
 }
 
 export const COLUMNS = [

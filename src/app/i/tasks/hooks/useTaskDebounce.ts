@@ -16,17 +16,18 @@ export function useTaskDebounce({ watch, itemId }: IUseTaskDebounce) {
 	const { createTask } = useCreateTask()
 	const { updateTask } = useUpdateTask()
 
-	// Debounce будет сохраняться между рендерами и будет работать как надо
 	const debouncedCreateTask = useCallback(
 		debounce((formData: TypeTaskFormState) => {
 			createTask(formData)
-		}, 400),
+		}, 444),
 		[]
 	)
+
+	// Теперь debouncedUpdateTask будет сохраняться между рендерами, и debounce будет работать как ожидается.
 	const debouncedUpdateTask = useCallback(
 		debounce((formData: TypeTaskFormState) => {
 			updateTask({ id: itemId, data: formData })
-		}, 400),
+		}, 444),
 		[]
 	)
 
@@ -42,8 +43,8 @@ export function useTaskDebounce({ watch, itemId }: IUseTaskDebounce) {
 			}
 		})
 
-		return () => unsubscribe()
+		return () => {
+			unsubscribe()
+		}
 	}, [watch(), debouncedUpdateTask, debouncedCreateTask])
-
-	return {}
 }

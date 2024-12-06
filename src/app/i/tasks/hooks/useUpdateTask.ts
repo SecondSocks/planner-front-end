@@ -1,5 +1,3 @@
-'use client'
-
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { TypeTaskFormState } from '@/types/task.types'
@@ -10,7 +8,7 @@ export function useUpdateTask(key?: string) {
 	const queryClient = useQueryClient()
 
 	const { mutate: updateTask } = useMutation({
-		mutationKey: ['updateTask', key],
+		mutationKey: ['update task', key],
 		mutationFn: ({ id, data }: { id: string; data: TypeTaskFormState }) =>
 			taskService.updateTask(id, data),
 		onSuccess() {
