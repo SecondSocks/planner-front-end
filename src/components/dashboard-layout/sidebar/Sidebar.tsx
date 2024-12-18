@@ -41,7 +41,7 @@ export function Sidebar() {
 				<a
 					href='https://github.com/SecondSocks'
 					target='_blank'
-					className='flex gap-2 opacity-20 hover:opacity-100 transition-opacity duration-500'
+					className='flex gap-1 opacity-20 hover:opacity-100 transition-opacity duration-500'
 				>
 					<Github />
 					<h5 className='text-sm'>Developed by SecondSocks</h5>
