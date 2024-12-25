@@ -28,9 +28,9 @@ export function Pomodoro() {
 	const { createSession, isCreatePending } = useCreateSession()
 
 	return (
-		<div className='relative w-80 text-center'>
+		<div className='relative flex flex-col justify-center items-center text-center'>
 			{!isLoading && (
-				<div className='text-7xl font-semibold'>
+				<div className='text-9xl font-semibold'>
 					{formatTime(timerState.secondsLeft)}
 				</div>
 			)}

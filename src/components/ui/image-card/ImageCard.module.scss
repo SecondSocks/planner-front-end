@@ -1,0 +1,9 @@
+.card {
+	@apply rounded-xl;
+
+	border: 1px solid #e30b13;
+	box-shadow: 0 -20px 100px #e30b13;
+	.image {
+		@apply rounded-xl opacity-90;
+	}
+}

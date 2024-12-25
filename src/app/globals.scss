@@ -15,11 +15,13 @@
 }
 
 body {
-	@apply text-base overflow-hidden;
+	@apply text-base overflow-x-hidden overflow-y-auto;
 
 	font-family: var(--font-zen), sans-serif;
 	color: var(--foreground);
 	background-color: #0e0f0f;
+	scroll-behavior: smooth;
+	scrollbar-color: #e30e13;
 
 	@media (max-width: 1200px) {
 		font-size: 16px;
