@@ -2,7 +2,7 @@
 	@apply flex gap-16;
 
 	> a {
-		@apply h-full w-24 text-center py-layout border-b border-transparent;
+		@apply h-full w-24 text-center py-layout border-b border-transparent cursor-pointer;
 		transition: border-color 0.3s ease;
 
 		> h1 {

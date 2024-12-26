@@ -16,6 +16,7 @@ export function Main() {
 			<h2>All productivity tools in one app</h2>
 			<Button onClick={() => redirect.push('/auth')}>Try for free</Button>
 			<ImageCard
+				src='/taskListPreview.jpg'
 				width={1376}
 				height={767}
 			/>

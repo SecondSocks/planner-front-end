@@ -6,7 +6,8 @@ import { ImageCard } from '@/components/ui/image-card/ImageCard'
 
 import { COLORS } from '@/constants/color.constants'
 
-import styles from './Home.module.scss'
+import styles from '../Home.module.scss'
+
 import { ImagesSrc } from './Preview.data'
 
 export function Preview() {
@@ -31,7 +32,7 @@ export function Preview() {
 
 	return (
 		<div className={styles.preview}>
-			<h1>Beautiful and convenient functionality in one place</h1>
+			<h1 id='preview'>Beautiful and convenient functionality in one place</h1>
 			<div className={styles.container}>
 				<fieldset className={styles.selection}>
 					<div
@@ -119,4 +120,3 @@ export function Preview() {
 		</div>
 	)
 }
-// TODO: Сделать превью можно при помощи 2 состояний: 1 - изображение, 2 - индекс выбранного элемента. При помощи cn нужно добавлять классы в зависимости от состояний (checked). Каждый элемент - это радио кнопка определенного размера. Внутри кнопки текст. Если кнопка checked, то перекрасить правый border.

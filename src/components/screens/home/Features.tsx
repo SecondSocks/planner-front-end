@@ -6,7 +6,12 @@ import styles from './Home.module.scss'
 export function Features() {
 	return (
 		<div className={styles.features}>
-			<h1 className='text-8xl font-medium'>Features</h1>
+			<h1
+				className='text-8xl font-medium'
+				id='features'
+			>
+				Features
+			</h1>
 			<div className={styles.cards}>
 				{CARDS_DATA.map(item => (
 					<Card

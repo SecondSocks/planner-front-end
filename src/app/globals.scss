@@ -32,6 +32,11 @@ body {
 	}
 }
 
+a[href^='#'] {
+	scroll-behavior: smooth;
+	scroll-margin-top: 20px;
+}
+
 input.defaultCheckbox {
 	color: white;
 }

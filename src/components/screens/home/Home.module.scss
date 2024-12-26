@@ -1,6 +1,6 @@
 %title {
 	> h1 {
-		@apply text-center text-white text-8xl font-bold;
+		@apply text-center text-white text-8xl font-bold mt-20;
 		filter: drop-shadow(0px 15px 4px rgba(217, 217, 217, 0.1));
 	}
 }
@@ -57,5 +57,36 @@
 				}
 			}
 		}
+	}
+}
+
+.advantage {
+	@apply flex gap-7 items-center w-[1140px];
+
+	> svg {
+		@apply w-32 h-32;
+	}
+
+	> h2 {
+		@apply text-4xl;
+	}
+}
+
+.whyUs {
+	@apply mb-48 flex flex-col;
+
+	@extend %title;
+
+	.container {
+		@apply px-[95px] mt-8 flex;
+	}
+}
+
+.footer {
+	@apply flex flex-col justify-center items-center gap-12 mb-20;
+
+	@extend %title;
+	> h1 {
+		@apply text-[64px] w-[1362px];
 	}
 }

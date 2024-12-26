@@ -1,6 +1,7 @@
 import { GanttChartSquareIcon } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { Link as LinkScroll } from 'react-scroll'
 
 import { COLORS } from '@/constants/color.constants'
 
@@ -12,7 +13,10 @@ export function Header() {
 	const redirect = useRouter()
 
 	return (
-		<div className='flex items-center justify-between w-screen h-full px-layout bg-sidebar'>
+		<div
+			className='flex items-center justify-between w-screen h-full px-layout bg-sidebar'
+			id='header'
+		>
 			<Link
 				href='/'
 				className='flex items-center gap-2.5'
@@ -29,15 +33,36 @@ export function Header() {
 				</span>
 			</Link>
 			<div className={styles.menu}>
-				<Link href='#'>
+				<LinkScroll
+					to='features'
+					activeClass='active'
+					spy={true}
+					smooth={true}
+					offset={-20}
+					duration={500}
+				>
 					<h1>Features</h1>
-				</Link>
-				<Link href='#'>
+				</LinkScroll>
+				<LinkScroll
+					to='preview'
+					activeClass='active'
+					spy={true}
+					smooth={true}
+					offset={-20}
+					duration={500}
+				>
 					<h1>Preview</h1>
-				</Link>
-				<Link href='#'>
+				</LinkScroll>
+				<LinkScroll
+					to='whyus'
+					activeClass='active'
+					spy={true}
+					smooth={true}
+					offset={-20}
+					duration={500}
+				>
 					<h1>Whys us</h1>
-				</Link>
+				</LinkScroll>
 			</div>
 			<Button onClick={() => redirect.push('/auth')}>Login</Button>
 		</div>
