@@ -1,137 +1,102 @@
-# Planner Back-End
+# Planner Front-End
 
-This repository contains the back-end service for the Planner application, designed to manage and support comprehensive planning functionalities.
+This repository contains the front-end application for the Planner project, providing users with an intuitive interface to manage their planning activities.
 
 ## Description
 
-The Planner Back-End is built with [NestJS](https://nestjs.com/), a progressive Node.js framework for building efficient and scalable server-side applications. It utilizes [Prisma ORM](https://www.prisma.io/) for database management, providing a robust foundation for the Planner application.
+The Planner Front-End is built with [Next.js](https://nextjs.org/), a React framework that enables server-side rendering and static site generation. It utilizes [Tailwind CSS](https://tailwindcss.com/) for styling, offering a responsive and modern user interface.
 
 ## Features
 
-- **Event Management**: Create, update, and delete events.
-- User Authentication: Secure user registration and login.
-- Group Management: Manage user groups and permissions.
-- Messaging: Facilitate communication between users.
-- Dashboard: Provide users with a comprehensive overview of their activities.
+- **Event Management**: View and interact with your scheduled events.
+- User Authentication: Register and log in securely.
+- Group Management: Manage your groups and permissions.
+- Messaging: Communicate seamlessly with other users.
+- Dashboard: Get an overview of your activities and schedules.
 
 ## Technologies Used
 
-- Node.js: JavaScript runtime environment.
-- NestJS: Framework for building efficient server-side applications.
-- Prisma ORM: Database toolkit for TypeScript and Node.js.
-- PostgreSQL: Relational database management system.
-- Docker: Containerization platform for deploying applications.
+- Next.js: React framework for server-side rendering.
+- React: JavaScript library for building user interfaces.
+- Tailwind CSS: Utility-first CSS framework for styling.
+- TypeScript: Typed superset of JavaScript.
+- ESLint: Tool for identifying and fixing linting issues.
+- Prettier: Code formatter for consistent code style.
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (version <!-- TODO: Specify version -->)
-- [Yarn](https://yarnpkg.com/) (version <!-- TODO: Specify version -->)
-- [Docker](https://www.docker.com/) (for containerized deployment)
+- [Node.js](https://nodejs.org/)
+- [Yarn](https://yarnpkg.com/) 
 
 ### Installation
 
-1.  planning functionalities.
+1.application for the Planne
 
-    ```bash
-    git clone https://github.com/SecondSocks/planner-back-end.git
-    cd planner-back-end
-    ```
+   ```bash
+   git clone https://github.com/SecondSocks/planner-front-end.git
+   cd planner-front-end
+   ```
 
-2.  Install dependencies:
-
+ 2. Install dependencies:
     ```bash
     yarn install
     ```
 
-3.  Set up the database:
-    • Ensure PostgreSQL is installed and running.
-    • Create a new database for the application.
-    • Configure the database connection in the .env file:
+ 3. Set up environment variables:
+Create a .env.local file in the root directory and add the necessary environment variables:
 
-        ```env
-        DATABASE_URL=postgresql://USER:PASSWORD@HOST:PORT/DATABASE_NAME
-        ```
+    APP_URL=<!-- TODO: Your API URL -->
 
-4.  Run database migrations:
 
-        ```bash
-        yarn prisma migrate dev
-        ```
+Running the Application
+ • Development mode:
 
-5.  Running the Application
-    • Development mode:
+    yarn dev
 
-        ```bash
-        yarn start:dev
-        ```
+ • Production build:
 
-        • Production mode:
+    yarn build
+    yarn start
 
-        ```bash
-        yarn start:prod
-        ```
+Running Tests
+ • Linting:
 
-6.  Running Tests
-    • Unit tests:
+    yarn lint
 
-        ```bash
-        yarn test
-        ```
 
-        • End-to-end tests:
+ • Type checking:
 
-        ```bash
-        yarn test:e2e
-        ```
+    yarn type-check
 
-        • Test coverage:
-        ```bash
-        yarn test:cov
-        ```
+
 
 ### Deployment
 
-To deploy the application using Docker:
+To deploy the application, consider using platforms like Vercel or Netlify, which offer seamless integration with Next.js applications.
 
-1.  Build the Docker image:
-
-        ```bash
-        docker build -t planner-backend .
-        ```
-
-2.  Run the Docker container:
-
-        ```bash
-        docker run -p 3000:3000 planner-backend
-        ```
-
-Ensure that the database connection settings in the .env file are correctly configured for the production environment.
-
-### Contributing
+Contributing
 
 Contributions are welcome! Please follow these steps:
+ 1. Fork the repository.
+ 2. Create a new branch: git checkout -b feature/your-feature-name.
+ 3. Make your changes.
+ 4. Commit your changes: git commit -m 'Add some feature'.
+ 5. Push to the branch: git push origin feature/your-feature-name.
+ 6. Open a pull request.
 
-1.  Fork the repository.
-2.  Create a new branch: git checkout -b feature/your-feature-name.
-3.  Make your changes.
-4.  Commit your changes: git commit -m 'Add some feature'.
-5.  Push to the branch: git push origin feature/your-feature-name.
-6.  Open a pull request.
-
-## License
+License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-## Acknowledgements
+Acknowledgements
+ • Next.js
+ • React
+ • Tailwind CSS
+ • TypeScript
 
-• NestJS
-• Prisma ORM
-• PostgreSQL
-• Docker
-
-## Contact
+Contact
 
 **GitHub**: https://github.com/SecondSocks
 
