@@ -10,7 +10,8 @@ export const getAccessToken = () => {
 export const saveTokenStorage = (accessToken: string) => {
 	Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
 		domain: 'localhost',
-		sameSite: 'lax',
+		sameSite: 'None',
+		secure: true,
 		expires: 1
 	})
 }

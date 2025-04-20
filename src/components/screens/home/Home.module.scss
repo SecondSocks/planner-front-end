@@ -78,7 +78,7 @@
 	@extend %title;
 
 	.container {
-		@apply px-[95px] mt-8 flex;
+		@apply px-[95px] mt-8 flex justify-center items-center;
 	}
 }
 
