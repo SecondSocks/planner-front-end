@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 
 import { Header } from '@/components/header/Header'
@@ -10,12 +12,14 @@ import { ToTop } from '@/components/ui/buttons/ToTop'
 
 export function Home() {
 	const [scroll, setScroll] = useState(0)
+	const [clientHeight, setClientHeight] = useState(0)
 
 	const handleScroll = () => {
 		setScroll(window.scrollY)
 	}
 
 	useEffect(() => {
+		setClientHeight(document.documentElement.clientHeight)
 		window.addEventListener('scroll', handleScroll)
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [])
@@ -28,7 +32,7 @@ export function Home() {
 			<Preview />
 			<WhyUs />
 			<Footer />
-			{scroll > document.documentElement.clientHeight && <ToTop />}
+			{scroll > clientHeight && <ToTop />}
 		</div>
 	)
 }

@@ -9,10 +9,10 @@ The Planner Front-End is built with [Next.js](https://nextjs.org/), a React fram
 ## Features
 
 - **Event Management**: View and interact with your scheduled events.
-- User Authentication: Register and log in securely.
-- Group Management: Manage your groups and permissions.
-- Messaging: Communicate seamlessly with other users.
-- Dashboard: Get an overview of your activities and schedules.
+- **User Authentication**: Register and log in securely.
+- **Group Management**: Manage your groups and permissions.
+- **Messaging**: Communicate seamlessly with other users.
+- **Dashboard**: Get an overview of your activities and schedules.
 
 ## Technologies Used
 
@@ -27,79 +27,129 @@ The Planner Front-End is built with [Next.js](https://nextjs.org/), a React fram
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/)
-- [Yarn](https://yarnpkg.com/) 
+- [Node.js](https://nodejs.org/) (18.18.0 or later)
+- [Yarn](https://yarnpkg.com/)
 
 ### Installation
 
-1.application for the Planne
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/SecondSocks/planner-front-end.git
    cd planner-front-end
    ```
 
- 2. Install dependencies:
-    ```bash
-    yarn install
-    ```
+2. Install dependencies:
 
- 3. Set up environment variables:
-Create a .env.local file in the root directory and add the necessary environment variables:
+   ```bash
+   yarn install
+   ```
 
-    APP_URL=<!-- TODO: Your API URL -->
+3. Set up environment variables:
 
+   Create a `.env.local` file in the root directory and add the necessary environment variables:
 
-Running the Application
- • Development mode:
+   ```bash
+   APP_URL=<!-- TODO: Your API URL -->
+   ```
 
-    yarn dev
+## Running the Application
 
- • Production build:
+### Development mode
 
-    yarn build
-    yarn start
+```bash
+yarn dev
+```
 
-Running Tests
- • Linting:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-    yarn lint
+### Production build
 
+```bash
+yarn build
+yarn start
+```
 
- • Type checking:
+## Running with Docker
 
-    yarn type-check
+The application can be built and run inside a Docker container.
 
+### Prerequisites
 
+- [Docker](https://www.docker.com/)
 
-### Deployment
+### Using Docker Compose
+
+Build and start the container:
+
+```bash
+docker compose up --build
+```
+
+The application will be available at [http://localhost:3000](http://localhost:3000).
+
+Stop and remove the container:
+
+```bash
+docker compose down
+```
+
+### Using Docker directly
+
+Build the image:
+
+```bash
+docker build -t planner-front-end .
+```
+
+Run the container:
+
+```bash
+docker run -p 3000:3000 planner-front-end
+```
+
+## Running Tests
+
+### Linting
+
+```bash
+yarn lint
+```
+
+### Type checking
+
+```bash
+npx tsc --noEmit
+```
+
+## Deployment
 
 To deploy the application, consider using platforms like Vercel or Netlify, which offer seamless integration with Next.js applications.
 
-Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
- 1. Fork the repository.
- 2. Create a new branch: git checkout -b feature/your-feature-name.
- 3. Make your changes.
- 4. Commit your changes: git commit -m 'Add some feature'.
- 5. Push to the branch: git push origin feature/your-feature-name.
- 6. Open a pull request.
 
-License
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature-name`.
+3. Make your changes.
+4. Commit your changes: `git commit -m 'Add some feature'`.
+5. Push to the branch: `git push origin feature/your-feature-name`.
+6. Open a pull request.
+
+## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Acknowledgements
- • Next.js
- • React
- • Tailwind CSS
- • TypeScript
+## Acknowledgements
 
-Contact
+- Next.js
+- React
+- Tailwind CSS
+- TypeScript
 
-**GitHub**: https://github.com/SecondSocks
+## Contact
+
+**GitHub**: [https://github.com/SecondSocks](https://github.com/SecondSocks)
 
 For any inquiries or issues, please open an issue on the GitHub repository.
-
-This template provides a comprehensive overview of your project, including setup instructions, technologies used, and contribution guidelines.

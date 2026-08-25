@@ -1,11 +1,20 @@
-import { useEffect, useRef, useState } from 'react'
+import {
+	Dispatch,
+	SetStateAction,
+	useEffect,
+	useRef,
+	useState
+} from 'react'
 
 interface IUseLocalStorage<T> {
 	key: string
 	defaultValue: T
 }
 
-export function useLocalStorage<T>({ key, defaultValue }: IUseLocalStorage<T>) {
+export function useLocalStorage<T>({
+	key,
+	defaultValue
+}: IUseLocalStorage<T>): [T, Dispatch<SetStateAction<T>>, boolean] {
 	const [isLoading, setIsLoading] = useState(true)
 
 	const isMounted = useRef(false)

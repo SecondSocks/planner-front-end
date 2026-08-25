@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import type { DateFormatter } from 'react-day-picker'
+import type { Formatters } from 'react-day-picker'
 
 const seasonEmoji: Record<string, string> = {
 	winter: '❄️',
@@ -17,19 +17,8 @@ const getSeason = (month: Date): keyof typeof seasonEmoji => {
 	return 'winter'
 }
 
-export const formatCaption: DateFormatter = month => {
+export const formatCaption: Formatters['formatCaption'] = month => {
 	const season = getSeason(month)
 
-	return (
-		<>
-			<span
-				role='img'
-				aria-label={season}
-				className='mr-2'
-			>
-				{seasonEmoji[season]}
-			</span>
-			{dayjs(month).format('MMMM')}
-		</>
-	)
+	return `${seasonEmoji[season]} ${dayjs(month).format('MMMM')}`
 }

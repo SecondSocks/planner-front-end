@@ -1,9 +1,20 @@
-export const errorCatch = (error): string => {
-	const message = error?.response?.data?.message
+type ErrorResponse = {
+	message?: string
+	response?: {
+		data?: {
+			message?: string | string[]
+		}
+	}
+}
+
+export const errorCatch = (error: unknown): string => {
+	const err = error as ErrorResponse
+
+	const message = err?.response?.data?.message
 
 	return message
-		? typeof error.response.data.message === 'object'
+		? Array.isArray(message)
 			? message[0]
 			: message
-		: error.message
+		: (err?.message ?? '')
 }

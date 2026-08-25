@@ -11,7 +11,7 @@ import { useCreateTimeBlock } from './useCreateTimeBlock'
 import { useUpdateTimeBlock } from './useUpdateTimeBlock'
 
 export function TimeBlockingForm() {
-	const { register, control, watch, reset, handleSubmit, getValues } =
+	const { register, control, watch, reset, handleSubmit } =
 		useFormContext<TypeTimeBlockFormState>()
 
 	const existsId = watch('id')

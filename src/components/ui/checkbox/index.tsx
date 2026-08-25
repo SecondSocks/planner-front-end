@@ -1,5 +1,6 @@
-const Checkbox = (props: {
-	id?: string
+import type { InputHTMLAttributes } from 'react'
+
+interface ICheckbox extends InputHTMLAttributes<HTMLInputElement> {
 	extra?: string
 	color?:
 		| 'red'
@@ -16,9 +17,9 @@ const Checkbox = (props: {
 		| 'amber'
 		| 'indigo'
 		| 'gray'
-	[x: string]: any
-}) => {
-	const { extra, color, id, ...rest } = props
+}
+
+const Checkbox = ({ extra, color, id, ...rest }: ICheckbox) => {
 	return (
 		<input
 			id={id}
