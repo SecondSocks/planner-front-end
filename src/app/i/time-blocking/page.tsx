@@ -6,6 +6,7 @@ import { NO_INDEX_PAGE } from '@/constants/seo.constants'
 
 import { TimeBlocking } from './TimeBlocking'
 
+
 export const metadata: Metadata = {
 	title: 'Pomodoro Timer',
 	...NO_INDEX_PAGE

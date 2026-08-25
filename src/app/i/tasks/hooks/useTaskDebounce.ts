@@ -1,5 +1,5 @@
 import debounce from 'lodash.debounce'
-import { useCallback, useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { UseFormWatch } from 'react-hook-form'
 
 import { TypeTaskFormState } from '@/types/task.types'
@@ -16,19 +16,21 @@ export function useTaskDebounce({ watch, itemId }: IUseTaskDebounce) {
 	const { createTask } = useCreateTask()
 	const { updateTask } = useUpdateTask()
 
-	const debouncedCreateTask = useCallback(
-		debounce((formData: TypeTaskFormState) => {
-			createTask(formData)
-		}, 444),
+	const debouncedCreateTask = useMemo(
+		() =>
+			debounce((formData: TypeTaskFormState) => {
+				createTask(formData)
+			}, 444),
 		[]
 	)
 
 	// Теперь debouncedUpdateTask будет сохраняться между рендерами, и debounce будет работать как ожидается.
-	const debouncedUpdateTask = useCallback(
-		debounce((formData: TypeTaskFormState) => {
-			updateTask({ id: itemId, data: formData })
-		}, 444),
-		[]
+	const debouncedUpdateTask = useMemo(
+		() =>
+			debounce((formData: TypeTaskFormState) => {
+				updateTask({ id: itemId, data: formData })
+			}, 444),
+		[itemId]
 	)
 
 	useEffect(() => {

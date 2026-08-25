@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { DASHBOARD_PAGES } from './config/pages-url.config'
 import { EnumTokens } from './services/auth.service'
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
 	const { url, cookies } = request
 
 	const refreshToken = cookies.get(EnumTokens.REFRESH_TOKEN)?.value

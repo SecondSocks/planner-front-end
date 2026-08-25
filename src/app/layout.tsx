@@ -7,6 +7,7 @@ import { SITE_NAME } from '@/constants/seo.constants'
 import './globals.scss'
 import { Providers } from './providers'
 
+
 const zen = Noto_Sans({
 	subsets: ['cyrillic', 'latin'],
 	weight: ['300', '400', '500', '600', '700'],

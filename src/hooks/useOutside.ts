@@ -8,7 +8,7 @@ import {
 } from 'react'
 
 type TypeOut = {
-	ref: RefObject<HTMLDivElement>
+	ref: RefObject<HTMLDivElement | null>
 	isShow: boolean
 	setIsShow: Dispatch<SetStateAction<boolean>>
 }
